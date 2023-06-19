@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Training simulator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script
+            src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+        <!--**** Remember to add the database script ***-->
+        <script
+            src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+        <!--Your web app's Firebase configuration-->
+        <script src="./JS/config.js"></script>
+        <!-- <script src="./lib/EZ.js"></script> -->
+        <link rel="stylesheet" href="./lib/EZ.css">
+        <script src="./JS/index.js"></script>
+        <style>
+            body{
+                background-color: rgb(73, 73, 73);
+                color: azure;
+            }
+            .header-stick div img {
+                width: 75px;
+                opacity: 0.75;
+            }
+            .header-stick{
+                border: none;
+                padding-inline: 5px;
+
+            }
+            #body{
+                margin-block: 25px;
+            }
+            #inputs{
+                margin-top: 25px;
+                width:100%;
+                text-align: center;
+                display: none;
+                border-radius: 5px;
+
+            }
+            #inputs p {
+                font-size: 19px;
+                margin: 0;
+                margin-bottom: 10px;
+
+            }
+            #inputs button{
+                margin-block: 10px;
+            }
+            textarea{
+                padding: 10px;
+                font-size: 16px;
+                width: 75%;
+                border-radius: 10px;
+            }
+            #info{
+                padding: 10px;
+                font-size: 16px;
+                text-align: left;
+                border-radius: 5px;
+            }
+            #info button{
+                margin-block: 10px;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="header-stick wrap-C d3-shadow" style="width: auto;">
+            <div class="wrap-R">
+                <img src="./assets/sd.png" alt>
+                <h1 style="font-size: 21px;">A training simulator for detecting
+                    antisemitic texts</h1>
+                <img src="./assets/sd.png" alt>
+            </div>
+
+            <h3 style="font-size: 15px;">Please help me train the system to
+                recognize antisemitic texts </h3>
+        </div>
+        <div id="body" class="wrap-C btn-shadow">
+
+            <div id="info" class="wrap-C btn-shadow">
+                <p>Welcome to Data Trainer <br> To help the system learn about
+                    anti-Semitic texts you will need to write 5 anti-Semitic
+                    texts, <br> and 5 <strong>non</strong>-anti-Semitic texts,
+                    <br> a total of 10 texts. <br>
+                    Click Submit to submit your answers.
+                    <br><br>
+                    (*Text) - any sentence or more you want at least 3 words and
+                    no more than 255 characters</p>
+                <input placeholder="Your name..." type="text" name="name"
+                    id="nameIN">
+                <button onclick="Start()" class="btn-long btn-shadow">lets Start</button>
+            </div>
+
+            <div id="inputs" class="wrap-C">
+                <p>Write antisemitic texts <br>(English Only)</p>
+                <p id="index">Text number : 1</p>
+                <textarea maxlength="254" draggable="false" name="textIN" id="textIN" cols="30"
+                    rows="4" placeholder="your text here..."></textarea>
+                <button onclick="AddData()" class="btn-long btn-shadow">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
