@@ -51,13 +51,13 @@ function AddData() {
   let str='';
   index++;
   if (index<=5) {
-     str = `<p>Write antisemitic texts <br>(English Only)</p>
+     str = `<p>Write <strong style="font-size: 22px; color: red;">antisemitic texts</strong> texts <br>(English Only)</p>
     <p id="index">Text number : ${index}</p>
     <textarea maxlength="254" draggable="false" name="textIN" id="textIN" cols="30"
         rows="4" placeholder="your text here..."></textarea>
     <button onclick="AddData()" class="btn-long btn-shadow">Submit</button>`
   }else if(index>5 && index<=10){
-    str = `<p>Write <strong>NON</strong> antisemitic texts <br>(English Only)</p>
+    str = `<p>Write <strong style="font-size: 22px; color: red;">NON</strong> antisemitic texts <br>(English Only)</p>
     <p id="index">Text number : ${index}</p>
     <textarea maxlength="254" draggable="false" name="textIN" id="textIN" cols="30"
         rows="4" placeholder="your text here..."></textarea>
@@ -82,7 +82,7 @@ function reload() {
   index=1;
   sessionKey=String.fromCharCode(Math.round(Math.random()*15000))+Math.round(Math.random()*99999)+String.fromCharCode(Math.round(Math.random()*15000));
   DatatoSend=[];
-  let str = `<p>Write antisemitic texts <br>(English Only)</p>
+  let str = `<p>Write <strong style="font-size: 22px; color: red;">antisemitic texts</strong> texts <br>(English Only)</p>
   <p id="index">Text number : ${index}</p>
   <textarea maxlength="254" draggable="false" name="textIN" id="textIN" cols="30"
       rows="4" placeholder="your text here..."></textarea>
